@@ -8,10 +8,10 @@ def root():
     return {"message": "feliz dia del estudiante", "status": "OK"}
 
 @app.get("/saludo")
-def saludo(nombre: str):
+def saludo(nombre: str, edad: int):
     return {"message": f"hola {nombre}! mucho gusto en conocerte!"}
 
-@app.post("/estudiantes")
+@app.post("/estudiantes", status_code=201)
 def crear_estudiante(nombre: str, apellido: str, curso: str):
     estudiantes.append(
         {"nombre": nombre, "apellido": apellido, "curso": curso}
