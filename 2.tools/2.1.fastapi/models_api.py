@@ -40,7 +40,7 @@ guilds = []
 characters = []
 
 @app.post("/guilds", status_code=201)
-def create_guild(guild: Guild):
+def create_guild(guild: Guild) -> list[Guild]:
     guilds.append(guild)
     return guilds
 
